@@ -1,4 +1,4 @@
-// src/pages/Productos.jsx
+
 import ItemListContainer from "../components/ItemListContainer";
 
 const Productos = () => {

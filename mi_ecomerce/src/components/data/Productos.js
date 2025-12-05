@@ -1,4 +1,3 @@
-// src/data/Productos.js
 
 export const productos = [
     {
@@ -209,12 +208,11 @@ export const productos = [
     }
 ];
 
-// 👉 simulamos un fetch con Promises + setTimeout
 export const getProductos = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
             resolve(productos);
-        }, 800); // 0.8 seg
+        }, 800);
     });
 };
 

@@ -1,5 +1,4 @@
-// src/components/ItemCard.jsx
-// src/components/ItemCard.jsx
+
 import { Link } from "react-router-dom";
 
 const ItemCard = ({ product }) => {
@@ -26,7 +25,6 @@ const ItemCard = ({ product }) => {
             <p>Categoría: {product.categoria}</p>
             <p>Precio: ${product.precio}</p>
 
-            {/* Le pasamos el producto seleccionado por state */}
             <Link to="/detalle" state={{ product }}>
                 Ver detalle
             </Link>

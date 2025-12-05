@@ -1,4 +1,4 @@
-// src/components/ItemDetail.jsx
+
 
 function ItemDetail({ producto }) {
     if (!producto) return null;
@@ -10,8 +10,6 @@ function ItemDetail({ producto }) {
             <p>Precio: ${producto.precio}</p>
             <p>Stock: {producto.stock}</p>
             <p>{producto.descripcion}</p>
-
-            {/* Acá después podes agregar ItemCount para el carrito */}
         </article>
     );
 }

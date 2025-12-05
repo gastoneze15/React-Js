@@ -1,5 +1,4 @@
-// src/pages/Categorias.jsx
-// src/pages/Categorias.jsx
+
 import { useEffect, useState } from "react";
 import { getProductos } from "../components/data/Productos";
 import ItemList from "../components/ItemList";
@@ -62,7 +61,6 @@ const Categorias = () => {
         <main style={{ padding: "2rem" }}>
             <h1>Categorías</h1>
 
-            {/* botones */}
             <div style={{ margin: "1rem 0", display: "flex", gap: "0.8rem" }}>
                 <button onClick={() => setCategoriaActiva("todos")}>Todos</button>
                 <button onClick={() => setCategoriaActiva("remeras")}>Remeras</button>
@@ -71,7 +69,6 @@ const Categorias = () => {
                 <button onClick={() => setCategoriaActiva("otros")}>Otros</button>
             </div>
 
-            {/* lista filtrada */}
             <ItemList products={productosFiltrados} />
         </main>
     );

@@ -1,4 +1,4 @@
-// src/App.jsx
+
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 
@@ -16,13 +16,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
 
-        {/* listado general de productos */}
         <Route path="/productos" element={<Productos />} />
 
-        {/* página de filtros */}
         <Route path="/categoria" element={<Categorias />} />
 
-        {/* detalle de producto */}
         <Route path="/detalle" element={<ProductoDetalle />} />
 
         <Route path="*" element={<NotFound />} />

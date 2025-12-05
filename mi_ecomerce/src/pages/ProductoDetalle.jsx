@@ -40,7 +40,6 @@ const ProductoDetalle = () => {
                     maxWidth: "420px",
                 }}
             >
-                {/* 👇 Usamos SIEMPRE "product" */}
                 {product.img && (
                     <img
                         src={product.img}

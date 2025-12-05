@@ -1,7 +1,7 @@
-// src/components/ItemListContainer.jsx
+
 import { useEffect, useState } from "react";
 import ItemList from "./ItemList";
-import { getProductos, getProductosPorCategoria } from "./data/Productos"; // 👈 ruta según tu árbol
+import { getProductos, getProductosPorCategoria } from "./data/Productos";
 
 const ItemListContainer = ({ titulo, categoriaFilter }) => {
     const [items, setItems] = useState([]);
