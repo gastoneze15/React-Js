@@ -1,29 +1,28 @@
-
 import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
-
-import Home from "./pages/Home.jsx";
-import Categorias from "./pages/Categorias.jsx";
-import Productos from "./pages/Productos.jsx";
-import ProductoDetalle from "./pages/ProductoDetalle.jsx";
-import NotFound from "./pages/NotFound.jsx";
+import ItemListContainer from "./components/ItemListContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
+import Cart from "./components/Cart";
+import CheckoutForm from "./components/CheckoutForm";
+import NotFound from "./pages/NotFound";
+import Inicio from "./pages/Inicio"; 
 
 function App() {
   return (
     <>
       <NavBar />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-
-        <Route path="/productos" element={<Productos />} />
-
-        <Route path="/categoria" element={<Categorias />} />
-
-        <Route path="/detalle" element={<ProductoDetalle />} />
-
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main className="container">
+        <Routes>
+          <Route path="/" element={<Inicio />} />
+          <Route path="/productos" element={<ItemListContainer />} />
+          <Route path="/categoria/:id" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/checkout" element={<CheckoutForm />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </>
   );
 }

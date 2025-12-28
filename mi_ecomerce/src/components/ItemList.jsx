@@ -1,25 +1,20 @@
+import Item from "./Item";
 
-import ItemCard from "./ItemCard";
-
-const ItemList = ({ products }) => {
-    if (!products || products.length === 0) {
-        return <p>No hay productos para mostrar.</p>;
-    }
-
+export default function ItemList({ items = [] }) {
     return (
-        <div
-            style={{
-                display: "flex",
-                gap: "1rem",
-                flexWrap: "wrap",
-                marginTop: "1rem",
-            }}
-        >
-            {products.map((prod) => (
-                <ItemCard key={prod.id} product={prod} />
-            ))}
+        <div className="productsPage">
+            <div className="productsTop">
+                <div className="productsTitle">
+                    <h2>Productos</h2>
+                    <p>Elegí tu favorito y mirá el detalle.</p>
+                </div>
+            </div>
+
+            <div className="gridProducts">
+                {items.map((prod) => (
+                    <Item key={prod.id} prod={prod} />
+                ))}
+            </div>
         </div>
     );
-};
-
-export default ItemList;
+}

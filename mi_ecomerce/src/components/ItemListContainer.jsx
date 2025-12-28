@@ -1,34 +1,31 @@
-
 import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import { getProductos, getProductosPorCategoria } from "./data/Productos";
+import { getProducts, getProductsByCategory } from "../services/products";
+import "../pages/productos.css";
 
-const ItemListContainer = ({ titulo, categoriaFilter }) => {
+export default function ItemListContainer() {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
+    const { id } = useParams();
 
     useEffect(() => {
         setLoading(true);
 
-        const fetchFn = categoriaFilter
-            ? () => getProductosPorCategoria(categoriaFilter)
-            : getProductos;
+        const fn = id ? getProductsByCategory : getProducts;
 
-        fetchFn()
-            .then((res) => setItems(res))
+
+
+        fn(id)
+            .then((data) => {
+                setItems(data);
+            })
+            .catch((err) => console.error(err))
             .finally(() => setLoading(false));
-    }, [categoriaFilter]);
 
-    if (loading) {
-        return <p style={{ padding: "2rem" }}>Cargando productos...</p>;
-    }
+    }, [id]);
 
-    return (
-        <main style={{ padding: "2rem" }}>
-            {titulo && <h1>{titulo}</h1>}
-            <ItemList products={items} />
-        </main>
-    );
-};
+    if (loading) return <p>Cargando...</p>;
 
-export default ItemListContainer;
+    return <ItemList items={items} />;
+}

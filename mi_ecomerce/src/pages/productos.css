@@ -1,0 +1,131 @@
+
+.productsPage {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px 20px 48px;
+}
+
+.productsTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.productsTitle h2 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -0.4px;
+    color: #1f2937;
+}
+
+.productsTitle p {
+    margin-top: 6px;
+    color: #667085;
+    font-size: 15px;
+}
+
+.gridProducts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+
+.card {
+    background: #ffffff;
+    border-radius: 18px;
+    border: 1px solid #eef0f6;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(16, 24, 40, 0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 18px 45px rgba(16, 24, 40, 0.12);
+}
+
+.cardImg {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    background: #f3f4f6;
+}
+
+.cardBody {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.cardBody h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 700;
+    color: #111827;
+}
+
+.cardBody p {
+    margin: 0;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.price {
+    font-weight: 800;
+    font-size: 17px;
+    color: #1f2937;
+    margin-top: 6px;
+}
+
+
+.badge {
+    align-self: flex-start;
+    background: #f4f6ff;
+    border: 1px solid #e3e7ff;
+    color: #3b44ff;
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 999px;
+}
+
+.linkBtn {
+    margin-top: 12px;
+    width: 90%;
+    background: #4f46e5;
+    color: #ffffff;
+    font-weight: 600;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.linkBtn:hover {
+    background: #4338ca;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 60px 20px;
+    color: #6b7280;
+}
+
+.emptyState h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.loader {
+    text-align: center;
+    padding: 60px;
+    font-size: 16px;
+    color: #6b7280;
+}
